@@ -335,11 +335,7 @@ def _clean(s):
     mis-entered by a user.
     """
     s = _clean_regex.sub('', s.lower().strip())
-
-    while "  " in s:
-        s = s.replace("  ", " ")
-
-    return s.strip()
+    return " ".join(s.split())
 
 
 def parse(timestring, start_time=None):
